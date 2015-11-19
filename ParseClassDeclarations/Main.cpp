@@ -14,7 +14,7 @@ struct ClassStruct
 class ClassParser
 {
 public:
-	string GetFile(string fileName) const
+	string GetFile(const string & fileName) const
 	{
 		ifstream file(fileName);
 		string output;
@@ -23,7 +23,7 @@ public:
 		return output;
 	}
 
-	int PositionOfClassIdentifierMismatchPosition(string input, int offset) const
+	int PositionOfClassIdentifierMismatchPosition(const string & input, int offset) const
 	{
 		auto classIdentifier = "class ";
 		auto index = 0;
@@ -35,10 +35,10 @@ public:
 		return -1;
 	}
 
-	vector<ClassStruct> GetClassDeclarations(string input) const
+	vector<ClassStruct> GetClassDeclarations(const string & input) const
 	{
 		vector<ClassStruct> output;
-		size_t index = 0;
+		auto index = 0;
 		while (true)
 		{
 			if (index >= input.length() - 4) break;
@@ -74,7 +74,7 @@ public:
 	}
 };
 
-int main(int argc, const char ** argv)
+int main(const int argc, const char ** argv)
 {
 	if (argc != 2)
 	{

@@ -15,7 +15,7 @@ struct FunctionDeclaration
 
 struct FunctionParser
 {
-	string GetFile(string input) const
+	string GetFile(const string & input) const
 	{
 		ifstream file(input);
 		string output;
@@ -31,7 +31,7 @@ struct FunctionParser
 		*first = move(temp);
 	}
 
-	vector<FunctionDeclaration> ParseFunctions(string input) const
+	vector<FunctionDeclaration> ParseFunctions(const string & input) const
 	{
 		vector<FunctionDeclaration> output;
 		unsigned int index = 0;
